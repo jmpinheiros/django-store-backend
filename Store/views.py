@@ -36,8 +36,8 @@ def dapartmentApi(request,id=0):
         departments_serializer = DepartmentSerializer(data=departments_data)
         if departments_serializer.is_valid():
             departments_serializer.save()
-            return JsonResponse("Salvo com Sucesso !!", safe=False)
-        return JsonResponse("Falha ao salvar !", safe=False)
+            return JsonResponse("Department Salvo com Sucesso !!", safe=False)
+        return JsonResponse("Falha ao salvar Department!", safe=False)
 
     elif request.method == 'PUT':
         
@@ -51,13 +51,13 @@ def dapartmentApi(request,id=0):
         departments_serializer = DepartmentSerializer(departments,data=departments_data)
         if departments_serializer.is_valid():
             departments_serializer.save()
-            return JsonResponse("Alterado com Sucesso !", safe=False)
-        return JsonResponse("Falha ao Alterar !", safe=False)
+            return JsonResponse("Department Alterado com Sucesso !", safe=False)
+        return JsonResponse("Falha ao Alterar Department!", safe=False)
 
     elif request.method == 'DELETE':
         departments = Departments.objects.get(IdDepartment=id)
         departments.delete()
-        return JsonResponse("Deletado com Sucesso !", safe=False)
+        return JsonResponse("Department Deletado com Sucesso !", safe=False)
 
 
 @csrf_exempt
@@ -76,8 +76,9 @@ def employeesApi(request,id=0):
         employees_serializer = EmployeeSerializer(data=employees_data)
         if employees_serializer.is_valid():
             employees_serializer.save()
-            return JsonResponse("Salvo com Sucesso !!", safe=False)
-        return JsonResponse("Falha ao salvar !", safe=False)
+            return JsonResponse("Employee Salvo com Sucesso !!", safe=False)
+        #print(employees_serializer.errors)
+        return JsonResponse("Falha ao salvar Employee ! ", safe=False)
 
     elif request.method == 'PUT':
         
@@ -91,13 +92,13 @@ def employeesApi(request,id=0):
         employees_serializer = EmployeeSerializer(employees,data=employees_data)
         if employees_serializer.is_valid():
             employees_serializer.save()
-            return JsonResponse("Alterado com Sucesso !", safe=False)
-        return JsonResponse("Falha ao Alterar !", safe=False)
+            return JsonResponse("Employee Alterado com Sucesso !", safe=False)
+        return JsonResponse("Falha ao Alterar Employee!", safe=False)
 
     elif request.method == 'DELETE':
         employees = Employees.objects.get(IdEmployee=id)
         employees.delete()
-        return JsonResponse("Deletado com Sucesso !", safe=False)
+        return JsonResponse("Employee Deletado com Sucesso !", safe=False)
 
 
 # metodo para salvar imagens

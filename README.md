@@ -68,12 +68,4 @@ TIME_ZONE = 'America/Sao_Paulo'
 
 ## FRONTEND ##
 
-## Depois que app estiver no ar, vamos criar o react
-    npx create-react-app frontend
-    npm start
-    npm install react-bootstrap bootstrap
-
-# instalar bootstrap no projeto
-    usar estilo bootstrap no aquivo index.html
-
-# Criar aquivo Home.js em src/ 
+    react store-frontend

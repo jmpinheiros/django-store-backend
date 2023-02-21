@@ -63,10 +63,13 @@ REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':[
         'rest_framework.permissions.AllowAny']}
 
 # Rest framework aceita requisição de domains diferentes
-CORS_ORIGIN_ALLOW_ALL = True
+#CORS_ORIGIN_ALLOW_ALL = True
 
 # aqui eu permitiria expressamente
-#CORS_ORIGIN_WHITELIST = ('http://exemplo.com')
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://example.com',
+]
 
 TEMPLATES = [
     {
