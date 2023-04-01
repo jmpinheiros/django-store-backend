@@ -67,8 +67,9 @@ REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':[
 
 # aqui eu permitiria expressamente
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-    'http://example.com',
+     'http://localhost:3000',
+     'http://localhost',
+     'http://example.com',
 ]
 
 TEMPLATES = [
